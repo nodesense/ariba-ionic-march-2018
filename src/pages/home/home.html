@@ -1,0 +1,164 @@
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+        
+    <ion-title>
+      {{title}}
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<!-- 
+  <button ion-button (click)="menu.toggle()">
+    Toggle
+  </button> -->
+
+
+  <!-- apply directive as attribute -->
+  <button ion-button myMenu >
+    Toggle through directive
+  </button>
+
+  <p> Address </p>
+  
+  <!-- passing this.address to address component -->
+
+  <app-address  [address]="address" 
+                title="Home Address"
+                
+                (contactEvent)="onContactHandler($event)"
+                
+                >
+
+  </app-address>
+
+
+  <p> App Likes {{appLikes}} </p>
+
+
+  <app-like [likes]="appLikes"   
+            (likesChange)="appLikes = $event"
+  >
+  </app-like>
+
+  <p> Home Likes {{homeLikes}} </p>
+
+  <!-- [()] sugar -->
+
+  <app-like [(likes)]="homeLikes" >
+    
+  </app-like>
+  
+
+
+
+  The world is your oyster.
+  <p>
+    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+  </p>
+
+  <p>
+    Counter {{counter * 10}}
+  </p>
+
+  <p>
+    {{counter % 2 == 1? "Odd" : "Even"}} Number
+  </p>
+
+  <p>
+    Power 2^3 => {{ 2 | power: 3}}
+  </p>
+
+
+  <p>
+      Power counter^3 => {{ counter | power: 3}}
+  </p>
+
+  <p>
+    Power 2^3 | ^2 => {{ 2 | power: 3 | power:2}}
+  </p>
+  
+
+  <!-- [] property binding -->
+
+  <input [value]="counter * 1" />
+
+  <!-- () event binding -->
+
+  <button ion-button (click)="up()">
+    <ion-icon name="thumbs-up"></ion-icon>
+  </button>
+
+  <button ion-button (click)="down()">
+    <ion-icon name="thumbs-down"></ion-icon>
+  </button>
+
+ 
+  <button ion-button (click)="about()">
+    About
+  </button>  
+
+
+
+  <button ion-button (click)="contact()">
+      Contact
+  </button>
+  
+
+  <button ion-button (click)="cart()">
+      Cart
+  </button>
+  
+
+  <button ion-button (click)="showDeviceInfo()">
+    Device Info
+  </button>
+
+
+  <button ion-button (click)="geo()">
+      Geo
+  </button>
+  
+ 
+  <p>
+     UUID : {{uuid}}
+  </p>
+
+
+  
+<!-- 
+
+  <button ion-button (click)="alerts()">
+    Alerts
+  </button>
+
+  <button ion-button (click)="inputs()">
+      Inputs
+    </button>
+
+  
+  <button ion-button (click)="device()">
+      Device 
+  </button>
+
+
+  <button ion-button (click)="files()">
+      Files 
+  </button>
+
+
+
+  <button ion-button (click)="camera()">
+      Camera
+  </button>
+
+   -->
+
+  
+
+</ion-content>

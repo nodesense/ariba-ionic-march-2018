@@ -1,0 +1,18 @@
+IOS
+
+┌────────────┬──────────────────────────────────────────────────────────────────┐
+│ Name       │ Deployment Key                                                   │
+├────────────┼──────────────────────────────────────────────────────────────────┤
+│ Production │ RIH1PbOhhyoU8cwOME4F-LrkSCBh013501cf-9dd0-484e-8bd0-f26bb41fc826 │
+├────────────┼──────────────────────────────────────────────────────────────────┤
+│ Staging    │ QBgr8MBCR4z5-LbVyzrPy412oD0-013501cf-9dd0-484e-8bd0-f26bb41fc826 │
+└────────────┴──────────────────────────────────────────────────────────────────┘
+
+
+
+code-push app add codepush-ionic-starter-app ios cordova
+
+code-push deployment ls codepush-ionic-starter-app -k
+
+
+code-push release codepush-ionic-starter-app ./platforms/ios/www/ 0.0.1 --description "menu fixes" -d "Staging"

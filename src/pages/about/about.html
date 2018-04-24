@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        
+    <ion-title>
+      {{title | uppercase}}
+    </ion-title>
+
+    <ion-buttons end>
+        <button ion-button (click)="searchToggle()">
+            <ion-icon name="search"></ion-icon>
+      </button>
+      <button ion-button (click)="searchToggle()">
+          <ion-icon name="add"></ion-icon>
+    </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+   <p>About page - {{info.city}}</p>
+
+  <!-- apply directive as attribute -->
+  <!-- button is hosting directive 
+     button is now called host element
+  -->
+  <button ion-button  myMenu >
+      Toggle through directive
+  </button>
+
+   <button ion-button (click)="show = !show">
+     Toggle
+   </button>
+
+   <!-- * represent structural directive -->
+   
+   <button ion-button (click)="addMember()">
+     Add
+   </button>
+
+   <button ion-button (click)="empty()">
+     Empty
+   </button>
+
+   <!-- * structural directive, add, remove dom elements -->
+
+   <div *ngIf="show == true">
+     <h2> Members </h2>
+
+     <ul>
+        <li *ngFor="let member of members">
+          {{member}}
+        </li>
+      </ul>
+      
+   </div>
+
+   
+
+</ion-content>

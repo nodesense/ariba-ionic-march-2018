@@ -1,0 +1,59 @@
+<!--
+  Generated template for the ContactPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>contact</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!-- # template reference variable -->
+
+  <!-- nameInput reference to real input dom elemnent -->
+  <!-- limited to contact page only -->
+
+  <input #nameInput />
+
+  <p #para1>
+
+  </p>
+
+
+  <!-- access real dom -->
+  <button (click)="nameInput.focus()" ion-button>
+    Focus
+  </button>
+
+  <button (click)="para1.textContent = nameInput.value"
+          ion-button>
+    Set Text
+  </button>
+
+
+  <!-- address is undefined -->
+
+  <p *ngIf="address"> City: {{address.city}} </p>
+
+  <!-- Angular Elvis operator ?. null check -->
+  
+  <p > State: {{address?.state}} </p>
+
+  <!-- works, not recommend to access 
+      service obj in views -->
+      
+  <p>Counter : {{dataService.counter}} </p> 
+
+
+
+  <button (click)="fetch()">
+    Fetch
+  </button>
+
+</ion-content>
